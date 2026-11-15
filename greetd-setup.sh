@@ -1,0 +1,2 @@
+sudo mkdir -p /etc/greetd && printf '[default_session]\ncommand = "tuigreet --cmd i3"\nuser = "greeter"\n' | sudo tee /etc/greetd/config.toml > /dev/null
+sudo sed -i '/^# Tell the viewers/a if [ -x /usr/bin/greetd ]; then\n  exec /usr/bin/greetd\nfi\n' /etc/rc.d/rc.4 && sudo sed -i 's/^id:3:initdefault:/id:4:initdefault:/' /etc/inittab && sudo init 4
