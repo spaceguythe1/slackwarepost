@@ -168,11 +168,6 @@ int main(){
             printf("Flatpak failed to install prismlauncher\n");
             return 1;
         };
-        res = system("flatpak install flathub org.videolan.VLC");
-        if(res != 0){
-            printf("Flatpak failed to install VLC\n");
-            return 1;
-        };
         res = system("flatpak install flathub fr.handbrake.ghb");
         if(res != 0){
             printf("Flatpak failed to install handbrake\n");
